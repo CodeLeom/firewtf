@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate, useLocation, Link } from "react-router-dom"
 
 function Header() {
     const navigate = useNavigate()
@@ -8,6 +8,9 @@ function Header() {
 
     if(location.pathname === "/sign-up"){
         btnText = "Login"
+        targetRoute = "/"
+    } else if(location.pathname === "/profile"){
+        btnText = "Log Out"
         targetRoute = "/"
     } else {
         btnText = "Sign Up"
@@ -39,7 +42,7 @@ function Header() {
                     <li><a>Item 3</a></li> */}
                 </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Firebase Auth</a>
+                <a className="btn btn-ghost text-xl"><Link to="/">Firebase Auth</Link></a>
             </div>
             {/* <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
