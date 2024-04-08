@@ -42,7 +42,7 @@ function Login() {
                 <button className="btn btn-wide btn-outline btn-black" onClick={(e) => loginUandPass(e)}>Login</button>
               </div>
 
-              <div className="mt-3 text-center">No account yet? Click  
+              <div className="mt-3 text-center">No account yet?   
                 <span className="text-[#AA4A44]">
                   <Link to="/sign-up"> Sign up</Link>
                 </span>
