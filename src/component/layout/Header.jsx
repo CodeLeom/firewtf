@@ -1,5 +1,23 @@
+import { useNavigate, useLocation } from "react-router-dom"
 
 function Header() {
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    let btnText, targetRoute
+
+    if(location.pathname === "/sign-up"){
+        btnText = "Login"
+        targetRoute = "/"
+    } else {
+        btnText = "Sign Up"
+        targetRoute = "/sign-up"
+    }
+
+    const handleClick = () => {
+        navigate(targetRoute)
+    }
+
   return (
     <>
         <div className="navbar bg-[#AA4A44]">
@@ -29,7 +47,7 @@ function Header() {
                 </ul>
             </div> */}
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <a className="btn" onClick={handleClick}>{btnText}</a>
             </div>
         </div>
     </>
